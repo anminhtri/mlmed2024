@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
+* Name: An Minh Tri
+* ID: BI12-447
 * Group ID: *Your Group ID here*
 
