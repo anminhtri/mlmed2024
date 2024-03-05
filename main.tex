@@ -1,0 +1,86 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\geometry{margin=1in}
+
+\title{Exploring Random Forest Classification on ECG Dataset}
+\author{An Minh Tri}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+This report delves into the application of Random Forest Classification on an Electrocardiogram (ECG) dataset, aiming to classify cardiac abnormalities. The study investigates the performance of Random Forest, a robust ensemble learning technique, in accurately identifying different cardiac conditions based on ECG signals.
+
+\section{Introduction}
+Electrocardiography is a crucial diagnostic tool in cardiology, providing insights into the electrical activity of the heart. With the increasing availability of ECG datasets, machine learning techniques can play a pivotal role in automating and enhancing the accuracy of cardiac disease detection. Random Forest, known for its versatility and resilience to overfitting, has shown promise in various classification tasks.
+
+\section{Dataset Description}
+The ECG dataset used in this study comprises a diverse range of cardiac signals collected from different patients. Each record includes a set of features extracted from ECG signals, such as QRS duration, heart rate, and various morphological features. The dataset is labeled with different cardiac conditions, making it suitable for supervised learning.
+
+\section{Methodology}
+The Random Forest algorithm was chosen due to its ability to handle high-dimensional datasets, manage noisy data, and provide robust performance. The following steps were executed in the analysis:
+
+\begin{itemize}
+    \item \textbf{Data Preprocessing:} The dataset underwent preprocessing, including normalization, handling missing values, and feature scaling to ensure the Random Forest model's optimal performance.
+    
+    \item \textbf{Feature Selection:} A careful selection of relevant features was conducted to enhance the model's interpretability and reduce computation time.
+    
+    \item \textbf{Model Training:} The Random Forest model was trained using a portion of the dataset, employing techniques such as cross-validation to ensure generalization.
+    
+    \item \textbf{Evaluation Metrics:} Performance was assessed using standard metrics such as accuracy, precision, recall, and F1 score. Additionally, the receiver operating characteristic (ROC) curve and area under the curve (AUC) were employed to evaluate the model's discriminatory power.
+\end{itemize}
+
+\section{Results}
+The Random Forest classification model demonstrated commendable performance in accurately identifying different cardiac conditions from the ECG dataset. The evaluation metrics provided insights into the model's precision, sensitivity, and overall accuracy. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+        & Precision & Recall & F1-Score & Support \\
+        \midrule
+        0.0 & 0.97 & 1.00 & 0.99 & 18118 \\
+        1.0 & 0.99 & 0.60 & 0.74 & 556 \\
+        2.0 & 0.98 & 0.88 & 0.93 & 1448 \\
+        3.0 & 0.88 & 0.60 & 0.71 & 162 \\
+        4.0 & 1.00 & 0.94 & 0.97 & 1608 \\
+        \midrule
+        \textbf{Accuracy} & & & 0.97 & 21892 \\
+        \textbf{Macro Avg} & 0.96 & 0.80 & 0.87 & 21892 \\
+        \textbf{Weighted Avg} & 0.97 & 0.97 & 0.97 & 21892 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Random Forest Classification Results}
+    \label{tab:classification_results}
+\end{table}
+The confusion matrix illustrated the performance of the classification algorithm by presenting the number of true positive, true negative, false positive, and false negative predictions for each class. It provides a detailed view of the model's performance and helps to identify where the model excels or struggles.
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./Confusion matrix.png}
+        \caption{Confusion matrix}
+        \label{fig:Confusion matrix}
+    \end{minipage}\hfill
+\end{figure}
+
+\section{Discussion}
+The success of Random Forest in this application suggests its potential as a reliable tool for automated cardiac disease classification. The ensemble nature of Random Forest contributes to its robustness and ability to handle complex relationships within the dataset.
+
+\section{Conclusion}
+This study highlights the effectiveness of Random Forest Classification in accurately classifying cardiac conditions using an ECG dataset. The promising results suggest that machine learning models, particularly ensemble techniques like Random Forest, can significantly contribute to the field of cardiology by automating and improving the accuracy of disease diagnosis.
+
+\section{Future Work}
+Future research could explore the integration of advanced feature engineering techniques and other ensemble methods to further enhance the model's performance. Additionally, investigating interpretability and explainability of the model outputs would contribute to its clinical applicability.
+
+\end{document}
